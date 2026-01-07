@@ -1,0 +1,235 @@
+/* FULL SCREEN SECTION */
+.work-section {
+  position: relative;
+  width: 100vw;
+  min-height: 100vh;
+  overflow: hidden;
+}
+
+/* BACKGROUND VIDEO */
+.work-bg-video {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  min-width: 100%;
+  min-height: 100%;
+  transform: translate(-50%, -50%);
+  object-fit: cover;
+  z-index: 1;
+}
+
+/* DARK OVERLAY FOR READABILITY */
+.work-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.45);
+  z-index: 2;
+}
+
+/* CONTENT ABOVE VIDEO */
+.work-content {
+  position: relative;
+  z-index: 3;
+  min-height: 100vh;
+  padding: 120px 80px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+}
+
+/* HEADING */
+.work-heading {
+  text-align: center;
+  margin-bottom: 50px;
+  color: #fff;
+  
+}
+
+.work-heading h2 {
+  font-family: " serif";
+  font-size: 10.2rem;
+  font-weight: 600;
+  letter-spacing: 3px;
+  margin-bottom: 12px;
+  font-size: 3.0rem;
+}
+
+.work-heading p {
+  font-family: "Poppins", cursive;
+  font-size: 1rem;
+  color: #ddd;
+  letter-spacing: 1px;
+}
+
+/* CARDS LAYOUT */
+.work-cards {
+  display: flex;
+  justify-content: center;
+  gap: 100px;
+}
+
+/* CARD LINK RESET */
+.card-link {
+  text-decoration: none;
+  color: red;
+  font-style: italic;
+}
+
+/* CARD STYLE */
+.work-card {
+  width: 350px;
+  background: #e10707;
+  border-radius: 22px;
+  overflow: hidden;
+  box-shadow: 0 10px 20px rgb(0, 0, 0);
+  transition: transform 0.4s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px);
+}
+
+/* IMAGE */
+.img-wrapper {
+  overflow: hidden;
+}
+
+.img-wrapper img {
+  width: 100%;
+  height: 340px;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.work-card:hover img {
+  transform: scale(1.15);
+}
+
+/* TITLE */
+.card-title {
+  text-align: center;
+  padding: 22px;
+  font-size: 1.6rem;
+  font-weight: 600;
+  letter-spacing: 2px;
+  background: #fff;
+}
+
+/* ANIMATION FOR SCROLL */
+
+/* INITIAL STATE */
+.animate-left,
+.animate-right {
+  opacity: 0;
+  transition: all 1s ease-out;
+}
+
+/* OFF-SCREEN BEFORE ANIMATION */
+.animate-left {
+  transform: translateX(-150px);
+}
+
+.animate-right {
+  transform: translateX(150px);
+}
+
+/* WHEN VISIBLE */
+.animate-left.visible,
+.animate-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* gallery*/
+/* Gallery Section Styles */
+.gallery-section {
+  padding: 50px 0;
+  background: #111;
+  color: #fff;
+  text-align: center;
+}
+
+.gallery-title {
+  font-size: 2rem;
+  margin-bottom: 20px;
+  font-family: 'Poppins', sans-serif;
+}
+
+.gallery-container {
+  overflow: hidden;
+  white-space: nowrap;
+  padding-left: 20px; /* optional padding */
+}
+
+.gallery-slider {
+  display: flex;
+  gap: 50px; /* increased horizontal spacing */
+  animation: scroll-right 25s linear infinite; /* scroll from right */
+  justify-content: flex-start;
+}
+
+.gallery-item {
+  flex: 0 0 auto;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item img {
+  height: 220px; /* slightly bigger for visibility */
+  width: auto;
+  border-radius: 10px;
+  transition: transform 0.3s ease;
+}
+
+.gallery-item:hover img {
+  transform: scale(1.2);
+}
+
+/* Continuous scroll animation starting from right */
+@keyframes scroll-right {
+  0% {
+    transform: translateX(100%); /* start from right */
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+/* Modal Styles */
+.modal-overlay {
+  position: fixed; /* important for overlay */
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.8);
+  z-index: 10000; /* above footer */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  position: relative;
+  max-width: 90%;
+  max-height: 90%;
+  outline: none;
+}
+
+.modal-content img {
+  width: 50%;
+  height: auto;
+  justify-items:center;
+  border-radius: 10px;
+}
+
+.close-btn {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  background: transparent;
+  border: none;
+  color: #fff;
+  font-size: 2rem;
+  cursor: pointer;
+}

@@ -1,0 +1,167 @@
+/* ================= CATEGORY PAGINATION ================= */
+
+.category-pagination {
+  display: flex;
+  justify-content: center;
+  gap: 18px;
+  margin: 60px 0 40px;
+  flex-wrap: wrap;
+}
+
+/* Remove default bootstrap look */
+.category-pagination .page-item {
+  border: none;
+}
+
+.category-pagination .page-link {
+  border: none !important;
+  background: transparent !important;
+  font-size: 18px;
+  font-weight: 600;
+  letter-spacing: 0.5px;
+  color: #222;
+  padding: 8px 4px;
+  position: relative;
+  transition: color 0.3s ease;
+  cursor: pointer;
+}
+
+/* Underline animation */
+.category-pagination .page-link::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -6px;
+  width: 0%;
+  height: 3px;
+  background: linear-gradient(90deg, #caa24d, #ffd36a);
+  transition: width 0.35s ease;
+  border-radius: 2px;
+}
+
+/* Hover effect */
+.category-pagination .page-link:hover {
+  color: #caa24d;
+}
+
+.category-pagination .page-link:hover::after {
+  width: 100%;
+}
+
+/* Active category */
+.category-pagination .active .page-link {
+  color: #caa24d;
+}
+
+.category-pagination .active .page-link::after {
+  width: 100%;
+}
+
+/* ================= CARDS GRID ================= */
+
+.cards-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 30px;
+  padding: 40px 60px;
+}
+
+/* ================= CARD STYLE ================= */
+
+.work-card {
+  border: none;
+  border-radius: 22px;
+  overflow: hidden;
+  cursor: pointer;
+  background: #000;
+  transition: transform 0.5s ease, box-shadow 0.5s ease;
+}
+
+.work-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.25);
+}
+
+.work-card img,
+.work-card video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.6s ease;
+}
+
+.work-card:hover img,
+.work-card:hover video {
+  transform: scale(1.08);
+}
+
+/* ================= MODAL ================= */
+
+.work-modal .modal-content {
+  background: transparent;
+  border: none;
+}
+
+/* Close Button */
+.modal-close-btn {
+  position: absolute;
+  top: 18px;
+  right: 18px;
+  z-index: 10;
+  width: 42px;
+  height: 42px;
+  border-radius: 50%;
+  border: none;
+  background: rgba(0, 0, 0, 0.6);
+  color: #fff;
+  font-size: 22px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.modal-close-btn:hover {
+  background: #caa24d;
+  transform: rotate(90deg) scale(1.1);
+}
+
+/* Modal Body */
+.modal-body {
+  padding: 0;
+  background: #000;
+  border-radius: 20px;
+  overflow: hidden;
+}
+
+.modal-body img,
+.modal-body video {
+  width: 100%;
+  height: auto;
+  display: block;
+  max-height: 90vh;
+  object-fit: contain;
+}
+
+/* ================= RESPONSIVE ================= */
+
+@media (max-width: 768px) {
+  .category-pagination {
+    gap: 12px;
+  }
+
+  .category-pagination .page-link {
+    font-size: 16px;
+  }
+
+  .cards-grid {
+    padding: 20px;
+  }
+
+  .modal-close-btn {
+    top: 12px;
+    right: 12px;
+    width: 36px;
+    height: 36px;
+    font-size: 18px;
+  }
+}
